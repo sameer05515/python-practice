@@ -10,6 +10,7 @@ def print_increasing_stars(count):
    print("*",end = "\t")
   print("")
 
+
 def print_decreasing_stars(count):
  for x in range(count):
   for y in range(count-x):

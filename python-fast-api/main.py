@@ -1,7 +1,7 @@
 from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse
 
-from number_to_words import (convertToDigit)
+
 import future_sip_calculation as fsip
 
 

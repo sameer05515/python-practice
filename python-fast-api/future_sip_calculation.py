@@ -1,6 +1,5 @@
-
 def cal_future_sip_amount(amount: float, interest_rate: float, year: int):
-    return_obj = {"amount": amount, "interest_rate": interest_rate, "years": year, "year_wise_detail": []};
+    calculated_obj = {"amount": amount, "interest_rate": interest_rate, "years": year, "year_wise_detail": []};
     future_amount: float = 0
     fut = []
     for x in range(1, year + 1):
@@ -13,10 +12,13 @@ def cal_future_sip_amount(amount: float, interest_rate: float, year: int):
             "year": x,
             "total_accumulated_amount": future_amount
         }
-        add_value(year_wise_detail, return_obj)
-        print(future_amount)
-    return_obj["future_amt"] = future_amount
-    return return_obj
+        add_value(year_wise_detail, calculated_obj)
+        # print(future_amount)
+
+    calculated_obj["total_investment"] = amount * year
+    calculated_obj["total_profit"] = future_amount - calculated_obj["total_investment"]
+    calculated_obj["future_amt"] = future_amount
+    return calculated_obj
 
 
 def add_value(val, dict_obj):
